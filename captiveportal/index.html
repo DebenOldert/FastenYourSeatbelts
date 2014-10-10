@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="Captive portal.css" />
+		<title>Captive portal</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1>Corendon<span>Dutch airlines</span> </h1>
+			<h2>Welcome by <span>Corendon</span>'s captive portal, sign in for WiFi.</h2>
+			<div class="content">
+				<div id="form_wrapper" class="form_wrapper">
+					<form class="login active">
+						<h3>Sign in</h3>
+						<div>
+							<label>Ticket Number:</label>
+							<input type="text" />
+							<span class="error">This is an error</span>
+						</div>
+						<div>
+							<label>Password:</label>
+							<input type="password" id="password" />
+							<span class="error">This is an error</span>
+						</div>
+						<div class="bottom">
+							<div class="remember"><input type="checkbox" onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'"> Show password</div>
+							<input type="submit" value="Sign in"></input>
+							<label>If you have questions please contact a stewardess</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
