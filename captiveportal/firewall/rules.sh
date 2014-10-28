@@ -32,7 +32,7 @@ then
   while read ip
     do
         #Shits getting serious now
-        $IPTABLES -t nat -A PREROUTING -s "$ip" -p tcp -j DNAT --to-destination$
+        $IPTABLES -t nat -A PREROUTING -s "$ip" -p tcp -j DNAT --to-destination 192.168.50.99:8080
         #Print the ip
         echo $ip
         #Increment 1 on i
@@ -51,7 +51,7 @@ if [ "$1" == "grand" ]
     if [[ ! -z "$2" ]]
     then
       #Delete the rule
-      $IPTABLES -t nat -D PREROUTING -s $2 -p tcp -j DNAT --to-destin$
+      $IPTABLES -t nat -D PREROUTING -s $2 -p tcp -j DNAT --to-destination 192.168.50.99:8080
       #Tell the system its fine
       echo "SUCCES"
     else
