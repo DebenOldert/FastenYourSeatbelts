@@ -45,7 +45,7 @@ then
   fi
 
 #If action is permitting acces to internet, delete rule to portal
-if [ "$1" == "delete" ]
+if [ "$1" == "grand" ]
   then
     #check if $2 (ip adress) not empty
     if [[ ! -z "$2" ]]
