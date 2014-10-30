@@ -43,7 +43,7 @@ do
 			do
    				#echo "$a.$b.$c.$d"
    				#Put new line with ip in users file
-   				echo -e "$a.$b.$c.$d\r\n" >> /users
+   				echo -e "$a.$b.$c.$d" >> /users
    				#Ad 1 for the counter
    				i=$((i+1))
 			done
