@@ -1,6 +1,6 @@
 #! bin/bash
 #IP generator
-VERSION="V1.2"
+VERSION="V1.2.4"
 #Generator to find all ip's in a range
 #Copy Right: Deben Oldert
 #Remove existing users file
@@ -14,7 +14,7 @@ read firstip
 echo "Enter your end ip"
 read secondip
 #Split the ip strings into array's
-IFS='.' read -a first <<< "$1firstip"
+IFS='.' read -a first <<< "$firstip"
 IFS='.' read -a second <<< "$secondip"
 #Set i for the counter
 i=0
