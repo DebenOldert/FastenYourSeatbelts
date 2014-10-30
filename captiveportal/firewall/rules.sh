@@ -30,7 +30,7 @@ i=0
 while read ip
 do
         #Shits getting serious now
-        sudo $IPTABLES -t nat -A PREROUTING -s "$ip" -p tcp -j DNAT --to-destination 192.168.50.99:8080
+        sudo $IPTABLES -t nat -A PREROUTING -s "$ip" -p tcp -j DNAT --to-destination 10.111.11.5:8080
         #Print the ip
         echo $ip
         #Increment 1 on i so we can see how many ip where added
@@ -48,7 +48,7 @@ then
         if [[ ! -z "$2" ]]
         then
                 #Delete the rule
-                sudo $IPTABLES -t nat -D PREROUTING -s $2 -p tcp -j DNAT --to-destination 192.168.50.99:$
+                sudo $IPTABLES -t nat -D PREROUTING -s $2 -p tcp -j DNAT --to-destination 10.111.11.5:8080
                 #Tell the system its fine
                 echo "SUCCES"
         else
