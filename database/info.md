@@ -16,6 +16,6 @@ Create a new connection:
 ```ip: <ip of your raspberry>```<br>
 ```port: 3306```<br>
 ```user: root```<br>
-```password: <password for root>```<br>
+```password: <password for root>```
 <h2>Step 8</h2>
 Have lots of fun! ;)
