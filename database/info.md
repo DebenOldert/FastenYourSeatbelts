@@ -13,9 +13,9 @@
 Open your sql client
 <h2>Step 7</h2>
 Create a new connection:
-```ip: <ip of your raspberry>```
-```port: 3306```
-```user: root```
-```password: <password for root>```
+```ip: <ip of your raspberry>```<br>
+```port: 3306```<br>
+```user: root```<br>
+```password: <password for root>```<br>
 <h2>Step 8</h2>
-Enjoy the database!
+Have lots of fun! ;)
