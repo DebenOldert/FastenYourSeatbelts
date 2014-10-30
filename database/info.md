@@ -6,7 +6,7 @@
 <h2>Step 3</h2>
 ```update user set Host="%" where Host="127.0.0.1";```
 <h2>Step 4</h2>
-```exit```
+```exit ```
 <h2>Step 5</h2>
 ```/etc/init.d/mysql restart```
 <h2>Step 6</h2>
