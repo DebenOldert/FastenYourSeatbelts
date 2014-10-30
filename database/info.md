@@ -12,7 +12,7 @@
 <h2>Step 6</h2>
 Open your sql client
 <h2>Step 7</h2>
-Create a new connection:
+Create a new connection:<br>
 ```ip: <ip of your raspberry>```<br>
 ```port: 3306```<br>
 ```user: root```<br>
