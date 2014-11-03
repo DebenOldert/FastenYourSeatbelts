@@ -1,3 +1,4 @@
+@CHARSET "UTF-8";
 body{
 	font-family:"Trebuchet MS", "Myriad Pro", Arial, sans-serif;
 	background:#f4f4f4 url(images/corendon8.jpg) no-repeat;
@@ -26,6 +27,13 @@ h2{
 }
 h2 span{
 	color:#aaa;
+}
+.error{
+	display:block;
+	width: 76%;
+	margin:5px 30px 0px 30px;
+	color:#CC0000;
+	font-size:12px;
 }
 /* Form Style */
 .form_wrapper{
