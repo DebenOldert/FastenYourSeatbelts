@@ -1,28 +1,43 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="Captiveportal.css" />
+		<link rel="stylesheet" type="text/css" href="CaptivePortal.css" />
 		<title>Captive portal</title>
+		<script type="text/javascript">
+		function getPar( name )
+		{
+		  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		  var regexS = "[\\?&]"+name+"=([^&#]*)";
+		  var regex = new RegExp( regexS );
+		  var results = regex.exec( window.location.href );
+		  if( results == null )
+		    return "";
+		  else
+		    return results[1];
+		}
+		function errorReport(text) {
+			document.getElementById('error').innerHTML = text;
+		}
+		</script>
 	</head>
-	<body>
+	<body onload="getError();">
 		<div class="wrapper">
 			<h1>Corendon<span>Dutch airlines</span> </h1>
 			<h2>Welcome by <span>Corendon</span>'s captive portal, sign in for WiFi.</h2>
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
-					<form class="login active">
+					<form class="login active" method="post" action="proccess" id="form">
 						<h3>Sign in</h3>
 						<div>
+							<div class="error" id="error"></div>
 							<label>Ticket Number:</label>
-							<input type="text" />
-							<span class="error">This is an error</span>
+							<input type="text" id="ticket" name="ticket"/>
 						</div>
 						<div>
-							<label>Password:</label>
-							<input type="password" id="password" />
-							<span class="error">This is an error</span>
+							<label>Last name:</label>
+							<input type="password" id="lastname" name="lastname"/>
 						</div>
 						<div class="bottom">
-							<div class="remember"><input type="checkbox" onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'"> Show password</div>
+							<div class="remember"><input type="checkbox" onchange="document.getElementById('lastname').type = this.checked ? 'text' : 'password'"> Show password</div>
 							<input type="submit" value="Sign in"></input>
 							<label>If you have questions, please contact a stewardess</label>
 						</div>
@@ -31,4 +46,24 @@
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+	function getError() {
+		switch(getPar('err')) {
+		case "":
+			break;
+		case "1":
+			errorReport("Ticket number and/or last name are wrong. Please try again.");
+			break;
+		case "2":
+			errorReport("Something went wrong.<br>Please try again.");
+			break;
+		case "3":
+			errorReport("Something went wrong.<br>Please contact a stewardess.");
+			break;
+		case "4":
+			errorReport("Something went wrong.<br>Please contact a stewardess.");
+			break;
+		}
+	}
+	</script>
 </html>
