@@ -20,14 +20,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/index")
 public class Index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-	
-    public Index() {
-        super();
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,13 +32,6 @@ public class Index extends HttpServlet {
         		} finally {
         		out.close(); }
         		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
 
 }
