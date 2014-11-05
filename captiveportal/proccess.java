@@ -20,14 +20,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/proccess")
 public class proccess extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public proccess() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
     
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +30,7 @@ public class proccess extends HttpServlet {
 	      PrintWriter out = response.getWriter();
 		// Send user back to login form
 	      try {
-	    	  out.println("<script>window.location.replace('http://corendon.nl/Captive%20Portal');</script>");
+	    	  out.println("<script>window.location.replace('http://portal.corendon.nl/Portal');</script>");
 	      	} finally {
 	      		out.close();  // Close the output writer
 	      	}
@@ -54,8 +46,8 @@ public class proccess extends HttpServlet {
 	      String ticket = request.getParameter("ticket");
 	      String lastName = request.getParameter("lastname");
 	      int exitCode = 1;
-	      String javaReturn0 = "<script>setTimeout(function(){window.location.replace('http://corendon.nl')},10000);</script>";
-	      String javaReturnErrorS = "<script>window.location.replace('http://corendon.nl/Captive_Portal/?err=";
+	      String javaReturn0 = "<script>setTimeout(function(){window.location.replace('http://corendon.nl')},2700);</script>";
+	      String javaReturnErrorS = "<script>window.location.replace('http://portal.corendon.nl/Portal/?err=";
 	      String javaReturnErrorE = "');</script>";
 	      //#####################################
 	      PrintWriter out = response.getWriter();
@@ -91,6 +83,7 @@ public class proccess extends HttpServlet {
 		}
 	    switch (exitCode) {
 	    case 0:
+	    	request.getRequestDispatcher("/loading.html").include(request, response);
 	    	out.println(javaReturn0);
 	    	break;
 	    case 1:
