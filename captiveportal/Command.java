@@ -14,7 +14,12 @@ public class Command {
     	    while((line = is.readLine()) != null){
     	        System.out.println(line);
     	    }
-    	    return true;
+    	    if((line = is.readLine()) == "SUCCES") {
+    	    	return true;
+    	    }
+    	    else {
+    	    return true;	
+    	    }
 			} catch ( Exception err ) {
 				err.printStackTrace();
 				return false;
