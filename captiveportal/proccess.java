@@ -29,11 +29,20 @@ public class proccess extends HttpServlet {
 	      response.setContentType("text/html");
 	      PrintWriter out = response.getWriter();
 		// Send user back to login form
+	      json JSON = new json();
+	      try {
+			JSON.grandAccess("123");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	      /*
 	      try {
 	    	  out.println("<script>window.location.replace('http://portal.corendon.nl/Portal');</script>");
 	      	} finally {
 	      		out.close();  // Close the output writer
-	      	}
+	      	}*/
+
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -43,37 +52,32 @@ public class proccess extends HttpServlet {
 	      response.setContentType("text/html");
 	      // Define variables
 	      //#####################################
-	      String ticket = request.getParameter("ticket");
-	      String lastName = request.getParameter("lastname");
-	      int exitCode = 1;
+	      String ticketNumber = request.getParameter("ticket");
+	      int exitCode = 2;
 	      String javaReturn0 = "<script>setTimeout(function(){window.location.replace('http://corendon.nl')},2700);</script>";
 	      String javaReturnErrorS = "<script>window.location.replace('http://portal.corendon.nl/Portal/?err=";
 	      String javaReturnErrorE = "');</script>";
 	      //#####################################
 	      PrintWriter out = response.getWriter();
-	      Database SQL = new Database();
 	      Command CMD = new Command();
+	      json JSON = new json();
 
 	      try {
-			if(SQL.Select(ticket, lastName)) {
-				  if(SQL.Update(ticket, lastName)) {
-					  if(CMD.Grand(request.getRemoteAddr())) {
-						  exitCode = 0;
-					  }
-					  else {
-						  if(SQL.Reset(ticket, lastName)) {
-							  exitCode = 2;
-						  }
-						  else {
-							  exitCode = 3;
-						  }
-					  }
-				  
-				  }
-				  else {
-					  exitCode = 2;
-				  }
-			  }
+			if(JSON.checkUser(ticketNumber)) {
+				if(JSON.grandAccess(ticketNumber))
+					{
+					if(CMD.Grand(request.getRemoteAddr())) {
+					  exitCode = 0;
+					}
+					else {
+						exitCode = 3;
+					}
+				}
+				else
+					{
+					exitCode = 2;
+					}
+			}
 			else {
 				exitCode = 1;
 			}
@@ -96,6 +100,9 @@ public class proccess extends HttpServlet {
 	    	out.println(javaReturnErrorS+exitCode+javaReturnErrorE);
 	    	break;
 	    case 4:
+	    	out.println(javaReturnErrorS+exitCode+javaReturnErrorE);
+	    	break;
+	    case 5:
 	    	out.println(javaReturnErrorS+exitCode+javaReturnErrorE);
 	    	break;
 	    }
