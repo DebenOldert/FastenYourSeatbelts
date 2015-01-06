@@ -14,6 +14,8 @@ import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 
 public class json {
+	private final String teamKey = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
+	private final String teamId = "INXXX-X";
 	private String[] listTickets(String url, String json) throws Exception {
 		 
 		
@@ -102,14 +104,14 @@ public class json {
 	      return (String) resultCode.get("result");  
 	}
 	@SuppressWarnings("unchecked")
-	public boolean checkUser(String ticketNumber) throws Exception
+	public boolean checkTicket(String ticketNumber) throws Exception
 		{
 		JSONObject json=new JSONObject();
 		Random random = new Random();
 		int  requestId = random.nextInt(9999) + 1000;
 		json.put("function", "List");
-		json.put("teamId", "IN103-3");
-		json.put("teamKey", "8b846f08-caca-4aab-b254-0109c5997053");
+		json.put("teamId", teamId);
+		json.put("teamKey", teamKey);
 		json.put("requestId", new Integer(requestId));
 		StringWriter out = new StringWriter();
 		  json.writeJSONString(out);
@@ -132,17 +134,15 @@ public class json {
 		Random random = new Random();
 		int  requestId = random.nextInt(9999) + 1000;
 		json.put("function", "RegisterInternetAccess");
-		json.put("teamId", "IN103-3");
-		json.put("teamKey", "8b846f08-caca-4aab-b254-0109c5997053");
+		json.put("teamId", teamId);
+		json.put("teamKey", teamKey);
 		json.put("requestId", new Integer(requestId));
 		json.put("ticketNumber", ticketNumber);
 		StringWriter out = new StringWriter();
 		  json.writeJSONString(out);
-		  //String jsonText = out.toString();
-		
-		//String grandResult = grandAccessRequest(jsonText);
-		return true;
-		/*if(grandResult == "8" || grandResult == "0")
+		  String jsonText = out.toString();
+		String grandResult = grandAccessRequest(jsonText);
+		if(grandResult.equals("0") || grandResult.equals("8"))
 		{
 			return true;
 		}
@@ -150,6 +150,6 @@ public class json {
 		{
 			System.out.println("Suddenly le wild error code (" +grandResult+ ") appeared!!");
 			return false;
-		}*/
+		}
 	}
 }
