@@ -1,3 +1,9 @@
+/*
+Copy right: Deben Oldert
+This is the famous JSON class
+Every JSON request and respond is created an proccesed here
+Enjoy the show
+*/
 package captiveportal;
 
 import java.text.DateFormat;
