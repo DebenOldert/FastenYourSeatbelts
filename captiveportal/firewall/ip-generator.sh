@@ -7,7 +7,7 @@ VERSION="V1.2.4"
 echo "IP generator"
 echo "Copy right: Deben Oldert"
 echo "Version: $VERSION"
-rm -f /users; touch /users
+rm -f /portal/users; touch /portal/users
 #Ask the ip range
 echo "Enter your start ip"
 read firstip
