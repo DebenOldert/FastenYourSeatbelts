@@ -49,13 +49,8 @@
 	<script type="text/javascript">
 	function getError() {
 		switch(getPar('err')) {
-		case "":
-			break;
-		case "1":
-			errorReport("Ticket number and/or last name are wrong. Please try again.");
-			break;
 		case "2":
-			errorReport("Something went wrong.<br>Please try again.");
+			errorReport("Your ticketnumber is wrong.<br>Please try again.");
 			break;
 		case "3":
 			errorReport("Something went wrong.<br>Please contact a stewardess.");
