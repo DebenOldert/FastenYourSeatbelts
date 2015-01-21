@@ -12,14 +12,12 @@ public class Command {
     	    String line;
     	    BufferedReader is = new BufferedReader(new InputStreamReader(process.getInputStream()));
     	    while((line = is.readLine()) != null){
-    	        System.out.println(line);
+    	        if(line.equals("SUCCES"))
+    	        	{
+    	        	return true;
+    	        	}
     	    }
-    	    if((line = is.readLine()) == "SUCCES") {
-    	    	return true;
-    	    }
-    	    else {
-    	    return true;	
-    	    }
+    	    return false;
 			} catch ( Exception err ) {
 				err.printStackTrace();
 				return false;
@@ -27,4 +25,3 @@ public class Command {
 
 		}
 	}
-
