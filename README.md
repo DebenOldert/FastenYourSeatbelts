@@ -1,7 +1,8 @@
-HvA_F.Y.S.
+Hogeschool van Amsterdam
 ==========
 
-HvA project Fasten Your Seatbelts team 3
+HvA project Fasten Your Seatbelts team 3 - 2014
 
-You can view our current documentation on:
-<a href="https://www.dropbox.com/sh/1dikq30pby5zfnq/AADnT18tPtWxlC7ttAtAhz3ia?dl=0" target="_blank">dropbox.com</a>
+If you are a brand new student and you want to copy my work, don't be shy and give me some credit.
+
+If you have any questions regarding my work please contact me.
