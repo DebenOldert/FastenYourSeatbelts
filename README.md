@@ -1,8 +1,11 @@
-Hogeschool van Amsterdam
+HvA project Fasten Your Seatbelts
 ==========
 
-HvA project Fasten Your Seatbelts team 3 - 2014
+Project fasten your seatbelts for the Univerity of Applied Sciences of Amsterdam/ Hogeschool van Amsterdam.  
+HvA F.Y.S. - 2014
 
-If you are a brand new student and you want to copy my work, don't be shy and give me some credit.
+**Feel free to copy/use it for your own project.  
+Keep in mind that it took me several days/weeks, beers and asperines to make this.  
+So be nice, and give me some credit, I won't bite and it won't hurt you.**  
 
 If you have any questions regarding my work please contact me.
